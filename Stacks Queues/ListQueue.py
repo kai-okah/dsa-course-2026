@@ -19,7 +19,7 @@ class ListQueue:
 			oldlast.next = self.last
 		
 	def dequeue(self):
-		item = self.first.item
+		item = self.first.data
 		self.first = self.first.next
 		if self.isEmpty():
 			 self.last = None

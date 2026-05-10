@@ -1,3 +1,4 @@
+# This is the implementation of Stack using a single linked list
 from stack_api import StackAPI
 
 class Stack(StackAPI):
@@ -15,7 +16,7 @@ class Stack(StackAPI):
     def pop(self):
         if self.count == 0:
             return None
-        item = self.first.item
+        item = self.first.data
         self.first = self.first.next
         self.count -= 1
         return item

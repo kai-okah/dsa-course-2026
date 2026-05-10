@@ -1,9 +1,19 @@
-from stack_with_single_linked_list import Stack
-from DSA import *
+from stack_with_array import Stack
 
+filename = "tinyTale.txt"
+try:
+    with open(filename, "r") as file:
+        text = file.read()
 
-stack = Stack()
-while not stdIsEmpty():
-    stack.push(stdReadString())
-while not stack.is_empty():
-    print(stack.pop(), end=" ")
+    words = text.split()
+    stack = Stack()
+
+    for word in words:
+        stack.push(word)
+
+    while not stack.is_empty():
+        print(stack.pop(), end=" ")
+
+except FileNotFoundError:
+    print("File not found")
+
