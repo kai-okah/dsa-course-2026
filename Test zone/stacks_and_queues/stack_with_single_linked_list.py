@@ -16,7 +16,7 @@ class Stack(StackAPI):
     def pop(self):
         if self.count == 0:
             return None
-        item = self.first.data
+        item = self.first.item
         self.first = self.first.next
         self.count -= 1
         return item

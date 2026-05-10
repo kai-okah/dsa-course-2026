@@ -15,7 +15,7 @@ class Stack:
 		self.first.next = oldfirst
 		
 	def pop(self):
-		item = self.first.data
+		item = self.first.item
 		self.first = self.first.next
 		return item
 	
