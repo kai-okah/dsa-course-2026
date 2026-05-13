@@ -27,6 +27,7 @@ dsa-course-2026/
 |   `-- Union-Find/
 |-- test_zone/
 |   |-- analysis_of_algorithms/
+|   |-- elementary_sort/
 |   |-- stacks_and_queues/
 |   `-- union_find/
 |-- LICENSE
@@ -65,6 +66,10 @@ From the repository root:
 
 ```bash
 python test_zone/analysis_of_algorithms/main.py
+```
+
+```bash
+python test_zone/elementary_sort/main.py
 ```
 
 ```bash
@@ -127,6 +132,18 @@ The analysis-of-algorithms tests currently check binary search and sum-counting 
 - 2-sum zero pairs
 - 3-sum zero triples
 - fast 3-sum behavior on sorted input
+
+The elementary-sort tests check behavior such as:
+
+- date comparison
+- date representation
+- selection sort
+- insertion sort
+- shellsort
+- sorting empty and one-item lists
+- sorting duplicates and negative values
+- sorting `Date` objects
+- shuffle length and item preservation
 
 The stack and queue tests check behavior such as:
 
