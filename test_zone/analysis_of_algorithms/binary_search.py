@@ -1,12 +1,13 @@
-def binary_search(array, item):
+def binary_search(a, key):
     low = 0
-    high = len(array) - 1
+    high = len(a) - 1
     while high >= low:
-        mid = (high + low) // 2
-        if array[mid] > item:
+        mid = (low + high) // 2
+        if a[mid] > key:
             high = mid - 1
-        elif array[mid] < item:
+        elif a[mid] < key:
             low = mid + 1
         else:
             return mid
     return -1
+

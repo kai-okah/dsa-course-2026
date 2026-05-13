@@ -51,7 +51,7 @@ Current course sample topics:
 
 The `test_zone/` folder contains my own implementations and test runners.
 
-The tests are intentionally simple and readable. They are written as `main.py` programs instead of a testing framework so that students can run, edit, and understand them easily.
+The tests are intentionally simple and readable. Each topic has a small `main.py` file that only calls test runner functions. The actual test cases live in separate `test_*.py` files so `main.py` stays clean and easy to scan.
 
 Current test-zone topics:
 
@@ -75,9 +75,45 @@ python test_zone/stacks_and_queues/main.py
 python test_zone/union_find/main.py
 ```
 
+## Test File Pattern
+
+Future test-zone folders should follow this pattern:
+
+```text
+topic_folder/
+|-- implementation_file.py
+|-- another_implementation_file.py
+|-- test_helpers.py
+|-- test_specific_topic.py
+`-- main.py
+```
+
+The responsibilities should stay separate:
+
+- implementation files contain the data structure or algorithm code
+- `test_helpers.py` contains shared printing helpers like expected vs actual output
+- `test_*.py` files contain the real test cases
+- `main.py` imports the test runner functions and calls them
+
+Example `main.py` style:
+
+```python
+from test_binary_search import run_binary_search_tests
+from test_sum import run_sum_tests
+
+
+def main():
+    run_binary_search_tests()
+    run_sum_tests()
+
+
+if __name__ == "__main__":
+    main()
+```
+
 ## What The Tests Check
 
-The analysis-of-algorithms tests currently check binary search behavior such as:
+The analysis-of-algorithms tests currently check binary search and sum-counting behavior such as:
 
 - finding existing items
 - missing items
@@ -87,6 +123,10 @@ The analysis-of-algorithms tests currently check binary search behavior such as:
 - even-sized arrays
 - negative numbers
 - duplicate values
+- 1-sum zero counts
+- 2-sum zero pairs
+- 3-sum zero triples
+- fast 3-sum behavior on sorted input
 
 The stack and queue tests check behavior such as:
 
